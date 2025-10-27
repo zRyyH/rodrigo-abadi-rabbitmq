@@ -1,15 +1,7 @@
 services:
   app:
     build: .
-    container_name: consumer-rabbitmq
-    environment:
-      RABBITMQ_HOST: "77.237.246.25"
-      RABBITMQ_PORT: "5672"
-      RABBITMQ_USER: "rabbitmq"
-      RABBITMQ_PASSWORD: "TkLzCNNb5J4Bc8TC"
-      RABBITMQ_QUEUE: "file_processing"
-      DIRECTUS_API_URL: "https://manager.awpsoft.com.br"
-      DIRECTUS_STATIC_TOKEN: "e93PMkf4jn9xMbtAxPRbbrTImVkRGiiV"
+    container_name: rabbitmq_file_processing
     volumes:
       - ./logs:/app/logs
     restart: unless-stopped

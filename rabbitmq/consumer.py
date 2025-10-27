@@ -12,5 +12,5 @@ def start_consumer():
     channel.basic_qos(prefetch_count=1)
     channel.basic_consume(queue=RABBITMQ_QUEUE, on_message_callback=process_message)
 
-    logger.info(f"Aguardando mensagens na fila '{RABBITMQ_QUEUE}'...")
+    logger.info(f"📥 Aguardando mensagens na fila '{RABBITMQ_QUEUE}'...")
     channel.start_consuming()
